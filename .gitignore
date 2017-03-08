@@ -1,0 +1,17 @@
+# Node
+node_modules
+npm-debug.log
+
+# Builder Local Config
+local.config.json
+
+# App Specific
+dist/
+
+# Misc
+data/
+jsconfig.json
+TODO
+
+# OS X
+.DS_Store
