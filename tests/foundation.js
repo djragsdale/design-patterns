@@ -1,14 +1,14 @@
 'use strict';
 
-const JR = require('./jr'); // Custom utilities package
+const JR = require('../jr'); // Custom utilities package
 
 
-const List = require('./foundation/List');
-const Iterator = require('./foundation/Iterator');
-const ListIterator = require('./foundation/ListIterator');
-// const numberToCoord = require('./_working/foundation/Coord');
-const Point = require('./foundation/Point');
-const Rect = require('./foundation/Rect');
+const List = require('../foundation/List');
+const Iterator = require('../foundation/Iterator');
+const ListIterator = require('../foundation/ListIterator');
+// const numberToCoord = require('../_working/foundation/Coord');
+const Point = require('../foundation/Point');
+const Rect = require('../foundation/Rect');
 
 
 
