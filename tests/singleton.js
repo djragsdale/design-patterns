@@ -3,7 +3,7 @@
 const JR = require('../jr'); // Custom utilities package
 
 
-const MazeLibrary = require('../_working/creational/singleton');
+const MazeLibrary = require('../creational/singleton');
 const MazeFactorySingleton = MazeLibrary.MazeFactory;
 const MazeFactorySingleton2 = MazeLibrary.MazeFactory;
 const MazeFactorySingletonAlternate = MazeLibrary.AlternateMazeFactory;
