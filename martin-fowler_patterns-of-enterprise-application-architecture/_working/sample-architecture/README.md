@@ -30,3 +30,29 @@ The Fictional company has embraced the Service-Oriented Architecture buzzword, s
 - **PostgresDB** will be used for all financial and supply chain data.
 - A separate **PostgressDB** instance will be used for Credit Card data for PCI compliance.
 - **MySQL** will be used for Product data because the Product team already has a process for updating this regularly.
+
+## Directory Structure
+
+### Clients
+
+Submodules for all the different clients. Keeping them in the same repository means our tests are run against the current version. Previous client distributions should be tested against each web service update.
+
+### Constants
+
+Only constant values. Helpful for enums that don't need to reside in the database.
+
+### Models
+
+True Domain Models. They might be Data Mappers.
+
+### Routes
+
+Only handles validation and interacting with the models. All domain logic should exist in the Domain Model.
+
+### Services
+
+Complex or transactional logic should exist here if it bridges multiple domains. Interactive CLI tools or scheduled jobs will often use these services. Services should be used through web routes when possible. If long-running tasks make that impossible, they can be used directly by CLI tools and web services can be used to determine the status of a particular job.
+
+### Util
+
+Pure functions only. Names should be descriptive of what they do in domain language.

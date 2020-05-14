@@ -1,5 +1,6 @@
 import express from 'express';
 import logger from './util/logger/index.js';
+import routes from './routes/index.js';
 
 const app = express();
 
@@ -12,6 +13,8 @@ app.use((req, res, next) => {
 app.get('/', (req, res) => {
   res.send('Hello, world!');
 });
+
+app.use(routes);
 
 const errorHandler = (err, req, res, next) => {
   logger.error(err.stack);
