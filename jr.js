@@ -12,6 +12,8 @@ const JR = (function() {
 	JR.utilities.isString = str => typeof str === 'string';
 	JR.utilities.isObject = obj => ((null !== obj) && Object.prototype.toString.call(obj) === '[object Object]');
 	JR.utilities.isArray = arr => ((null !== arr) && Object.prototype.toString.call(arr) === '[object Array]');
+	JR.utilities.isNumber = num => typeof num === 'number';
+	JR.utilities.isBoolean = bool => typeof bool === 'boolean';
 
 	const { isNull, isUndefined } = JR.utilities;
 
