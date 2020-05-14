@@ -3,17 +3,17 @@
 const MazeLibrary = {};
 
 // const Maze = require('./Maze');
-const Maze = function () { };
+const Maze = function () { this.addRoom = function () { }; };
 const Wall = function () { };
-const Room = function () { };
+const Room = function () { this.setSide = function () { }; };
 const Door = function () { };
 
-const EnchantedRoom = function () { };
+const EnchantedRoom = function () { Room.apply(this, arguments); };
 const Spell = function () { };
 const DoorNeedingSpell = function () { };
 
 const BombedWall = function () { };
-const RoomWithABomb = function () { };
+const RoomWithABomb = function () { Room.apply(this, arguments); };
 
 function MazeFactory () {
 
@@ -107,23 +107,23 @@ function MazeGame () {
 	}
 
 	this.createMaze = function(factory) {
-		let aMaze = factory.MakeMaze();
-		let room1 = factory.MakeRoom(1);
-		let room2 = factory.MakeRoom(2);
-		let aDoor = factory.MakeDoor(room1, room2);
+		let aMaze = factory.makeMaze();
+		let room1 = factory.makeRoom(1);
+		let room2 = factory.makeRoom(2);
+		let aDoor = factory.makeDoor(room1, room2);
 
-		aMaze.AddRoom(room1);
-		aMaze.AddRoom(room2);
+		aMaze.addRoom(room1);
+		aMaze.addRoom(room2);
 
-		room1.SetSide('North', factory.MakeWall());
-		room1.SetSide('East', factory.MakeWall());
-		room1.SetSide('South', factory.MakeWall());
-		room1.SetSide('West', factory.MakeWall());
+		room1.setSide('North', factory.makeWall());
+		room1.setSide('East', aDoor);
+		room1.setSide('South', factory.makeWall());
+		room1.setSide('West', factory.makeWall());
 
-		room2.SetSide('North', factory.MakeWall());
-		room2.SetSide('East', factory.MakeWall());
-		room2.SetSide('South', factory.MakeWall());
-		room2.SetSide('West', aDoor);
+		room2.setSide('North', factory.makeWall());
+		room2.setSide('East', factory.makeWall());
+		room2.setSide('South', factory.makeWall());
+		room2.setSide('West', aDoor);
 
 		return aMaze;
 	};
