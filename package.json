@@ -1,7 +1,6 @@
 {
   "name": "design-patterns",
   "version": "0.0.1",
-  "private": true,
   "devDependencies": {
     "prettyjson": "1.2.1"
   }

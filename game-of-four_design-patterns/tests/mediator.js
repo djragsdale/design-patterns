@@ -1,6 +1,6 @@
 'use strict';
 
-const JR = require('../jr'); // Custom utilities package
+const JR = require('../../jr'); // Custom utilities package
 
 
 const FontDialogDirector = require('../behavioral/mediator');

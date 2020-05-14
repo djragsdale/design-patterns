@@ -1,6 +1,6 @@
 'use strict';
 
-const JR = require('../jr');
+const JR = require('../../jr'); // Custom utilities package
 
 const MazeLibrary = require('../creational/prototype');
 const {
