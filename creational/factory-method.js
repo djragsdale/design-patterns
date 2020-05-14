@@ -109,6 +109,9 @@ function BombedMazeGame () {
 	return constructor.apply(this, arguments);
 }
 
+BombedMazeGame.prototype = Object.create(MazeGame.prototype);
+BombedMazeGame.prototype.constructor = BombedMazeGame;
+
 function EnchantedMazeGame () {
 
 	MazeGame.apply(this, arguments);
@@ -131,6 +134,9 @@ function EnchantedMazeGame () {
 
 	return constructor.apply(this, arguments);
 }
+
+EnchantedMazeGame.prototype = Object.create(MazeGame.prototype);
+EnchantedMazeGame.prototype.constructor = EnchantedMazeGame;
 
 MazeLibrary.MazeGame = MazeGame;
 MazeLibrary.BombedMazeGame = BombedMazeGame;
