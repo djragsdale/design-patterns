@@ -4,8 +4,5 @@
   "private": true,
   "devDependencies": {
     "prettyjson": "1.2.1"
-  },
-  "scripts": {
-    "test": "node foundation_test.js"
   }
 }
