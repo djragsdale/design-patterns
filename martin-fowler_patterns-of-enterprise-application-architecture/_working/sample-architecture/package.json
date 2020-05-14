@@ -3,13 +3,16 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
+    "db:test": "env-cmd node ./databases/connections/products_db.js",
     "dev": "env-cmd node serve.js",
     "lint": "eslint .",
     "start": "node serve.js",
     "test": "jest"
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mysql2": "^1.7.0",
+    "sequelize": "^5.21.9"
   },
   "devDependencies": {
     "env-cmd": "^10.1.0",

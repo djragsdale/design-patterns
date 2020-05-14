@@ -56,3 +56,27 @@ Complex or transactional logic should exist here if it bridges multiple domains.
 ### Util
 
 Pure functions only. Names should be descriptive of what they do in domain language.
+
+## Setup Instructions
+
+### Install MySQL
+
+1. `brew install mysql`
+1. `mysql_secure_installation`
+1. `brew services start mysql`
+1. `mysql -u root -p`
+1. `CREATE USER 'dev'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';`
+1. `GRANT ALL PRIVILEGES ON * . * TO 'dev'@'localhost';`
+1. `FLUSH PRIVILEGES;`
+1. `\q`
+1. `mysql -u dev -p`
+1. Create a new standard Sequel Pro connection to host `127.0.0.1`.
+
+```sql
+CREATE TABLE product (
+  product_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  sku VARCHAR(25),
+  name VARCHAR(100),
+  description VARCHAR(255)
+);
+```
