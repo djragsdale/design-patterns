@@ -1,6 +1,21 @@
 {
   "name": "sample-architecture",
+  "type": "module",
   "version": "0.0.1",
-  "dependencies": {},
-  "devDependencies": {}
+  "scripts": {
+    "dev": "env-cmd node serve.js",
+    "lint": "eslint .",
+    "start": "node serve.js",
+    "test": "jest"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "env-cmd": "^10.1.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2",
+    "jest": "^26.0.1"
+  }
 }
