@@ -20,4 +20,12 @@ module.exports = {
   rules: {
     'import/extensions': 'off',
   },
+  overrides: [
+    {
+      files: ['databases/**/*.{js,cjs}'],
+      rules: {
+        'import/no-extraneous-dependencies': 'off',
+      },
+    },
+  ],
 };

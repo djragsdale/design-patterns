@@ -1,4 +1,4 @@
-import config from './config.js';
+import config from './config.cjs';
 import app from './index.js';
 import logger from './util/logger/index.js';
 

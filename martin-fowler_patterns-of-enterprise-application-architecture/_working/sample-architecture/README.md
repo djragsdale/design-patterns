@@ -72,11 +72,9 @@ Pure functions only. Names should be descriptive of what they do in domain langu
 1. `mysql -u dev -p`
 1. Create a new standard Sequel Pro connection to host `127.0.0.1`.
 
-```sql
-CREATE TABLE product (
-  product_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  sku VARCHAR(25),
-  name VARCHAR(100),
-  description VARCHAR(255)
-);
-```
+Once installed, use `brew services start mysql` to start mysql and `brew services stop mysql` to stop it.
+
+### Initialize Products Database
+
+1. `npm run dev:products:migrate`
+1. `npm run dev:products:seed`

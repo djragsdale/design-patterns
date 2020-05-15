@@ -1,34 +1,23 @@
 // All Products have a SKU
 // This SKU is used to communicate between data sources
 
-import Sequelize from 'sequelize';
-
-import productsDb from '../databases/connections/products_db.js';
-
-const Product = productsDb.define('product', {
-  product_id: {
-    type: Sequelize.INTEGER,
-    primaryKey: true,
-    autoIncrement: true,
-  },
-  sku: Sequelize.STRING(25),
-  name: Sequelize.STRING(100),
-  description: Sequelize.STRING(255),
-}, {
-  tableName: 'product',
-  timestamps: false, // TODO: Re-initialize the database with this set to true
-  underscored: true,
-});
+import productDBModel from './Product_db_model.js';
+import convertModelToPojo from '../util/convertModelToPojo.js';
 
 const getProduct = async (sku) => {
-  const product = await Product.findOne({
+  const product = await productDBModel.findOne({
     where: {
       sku,
     },
-  });
-  return product;
+  }) || {};
+
+  return convertModelToPojo(product);
 };
-const getProducts = async () => Product.findAll();
+
+const getProducts = async () => {
+  const products = await productDBModel.findAll();
+  return convertModelToPojo(products);
+};
 
 export {
   getProduct,

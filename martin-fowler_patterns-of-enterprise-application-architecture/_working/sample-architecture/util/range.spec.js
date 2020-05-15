@@ -1,4 +1,4 @@
-import range from './range.js';
+import range from './range.cjs';
 
 describe('range()', () => {
   test('handles all three arguments', () => {

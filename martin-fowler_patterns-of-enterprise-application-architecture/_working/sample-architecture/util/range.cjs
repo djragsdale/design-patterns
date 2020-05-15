@@ -1,4 +1,6 @@
-export default function range(start, end, step) {
+// This is a CJS module because it is used by seeds which require CJS modules.
+
+module.exports = function range(start, end, step) {
   let selfStart = start;
   let selfEnd;
   let selfStep;
@@ -33,4 +35,4 @@ export default function range(start, end, step) {
   }
 
   return result;
-}
+};
