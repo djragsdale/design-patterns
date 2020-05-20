@@ -1,8 +1,16 @@
+import cors from 'cors';
 import express from 'express';
 import logger from './util/logger/index.js';
 import routes from './routes/index.js';
 
 const app = express();
+
+app.use(cors({
+  origin: [
+    'http://localhost:3000',
+    'http://localhost:4200',
+  ],
+}));
 
 // TODO: Generate Transaction IDs for all incoming requests
 app.use((req, res, next) => {

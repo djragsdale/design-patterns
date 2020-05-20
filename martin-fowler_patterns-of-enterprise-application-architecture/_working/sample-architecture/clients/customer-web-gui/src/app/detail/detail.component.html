@@ -1,0 +1,7 @@
+<div *ngIf="product">
+  <h2>{{product.name | uppercase}} Details</h2>
+  <div><span>sku: </span>{{product.sku}}</div>
+  <div><span>name: </span>{{product.name}}</div>
+  <div><span>description: </span>{{product.description}}</div>
+  <button (click)="goBack()">go back</button>
+</div>
