@@ -1,0 +1,13 @@
+{
+  "name": "@sample-architecture/admin-cli",
+  "version": "1.0.0",
+  "private": true,
+  "description": "CLI application to perform CRUD operations on data",
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "repository": {},
+  "scripts": {},
+  "dependencies": {},
+  "devDependencies": {}
+}
