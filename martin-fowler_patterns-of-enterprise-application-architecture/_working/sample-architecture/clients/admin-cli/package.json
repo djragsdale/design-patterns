@@ -7,7 +7,13 @@
   "author": "",
   "license": "MIT",
   "repository": {},
-  "scripts": {},
-  "dependencies": {},
+  "main": "lib/index.js",
+  "scripts": {
+    "start": "node ./lib/index.js"
+  },
+  "dependencies": {
+    "commander": "^5.1.0",
+    "inquirer": "^7.1.0"
+  },
   "devDependencies": {}
 }
