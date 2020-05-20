@@ -1,23 +1,25 @@
-import * as firebase from 'firebase';
+import axios from 'axios';
 
 import config from '../../config.cjs';
 
 const {
   userApiKey,
-  userAuthDomain,
-  userDatabaseURL,
-  userProjectId,
-  userStorageBucket,
-  userMessagingSenderId,
 } = config();
 
-const app = firebase.initializeApp({
-  apiKey: userApiKey,
-  authDomain: userAuthDomain,
-  databaseURL: userDatabaseURL,
-  projectId: userProjectId,
-  storageBucket: userStorageBucket,
-  messagingSenderId: userMessagingSenderId,
-});
+async function get(baseURL, data) {
+  return axios.get(baseURL, {
+    params: {
+      ...data,
+      key: userApiKey,
+    },
+  }).then((response) => response.data);
+}
 
-export default app.auth();
+async function post(baseURL, data) {
+  return axios.post(`${baseURL}?key=${userApiKey})`, data).then((response) => response.data);
+}
+
+export default {
+  get,
+  post,
+};
