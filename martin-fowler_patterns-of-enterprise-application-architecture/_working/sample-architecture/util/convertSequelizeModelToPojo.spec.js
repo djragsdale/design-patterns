@@ -1,6 +1,6 @@
-import convertModelToPojo from './convertModelToPojo.js';
+import convertSequelizeModelToPojo from './convertSequelizeModelToPojo.js';
 
-describe('convertModelToPojo()', () => {
+describe('convertSequelizeModelToPojo()', () => {
   test('handles singular model results', () => {
     const model = {
       dataValues: {
@@ -10,7 +10,7 @@ describe('convertModelToPojo()', () => {
       },
     };
 
-    expect(convertModelToPojo(model)).toStrictEqual(model.dataValues);
+    expect(convertSequelizeModelToPojo(model)).toStrictEqual(model.dataValues);
   });
 
   test('handles an array of results', () => {
@@ -29,7 +29,7 @@ describe('convertModelToPojo()', () => {
       },
     };
 
-    expect(convertModelToPojo([model0, model1]))
+    expect(convertSequelizeModelToPojo([model0, model1]))
       .toStrictEqual([model0.dataValues, model1.dataValues]);
   });
 });

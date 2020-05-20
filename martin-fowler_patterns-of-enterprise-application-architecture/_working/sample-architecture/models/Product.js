@@ -2,7 +2,7 @@
 // This SKU is used to communicate between data sources
 
 import productDBModel from './Product_db_model.js';
-import convertModelToPojo from '../util/convertModelToPojo.js';
+import convertSequelizeModelToPojo from '../util/convertSequelizeModelToPojo.js';
 
 const getProduct = async (sku) => {
   const product = await productDBModel.findOne({
@@ -11,12 +11,12 @@ const getProduct = async (sku) => {
     },
   }) || {};
 
-  return convertModelToPojo(product);
+  return convertSequelizeModelToPojo(product);
 };
 
 const getProducts = async () => {
   const products = await productDBModel.findAll();
-  return convertModelToPojo(products);
+  return convertSequelizeModelToPojo(products);
 };
 
 export {
