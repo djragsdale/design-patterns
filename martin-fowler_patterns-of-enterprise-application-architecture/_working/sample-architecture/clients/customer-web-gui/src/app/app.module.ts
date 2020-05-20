@@ -8,6 +8,22 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProductDetailComponent } from './detail/detail.component';
 import { ProductsComponent } from './products/products.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+// Material stuff
+import { LayoutModule as MatLayoutModule } from '@angular/cdk/layout';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
+
+// My Components
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   imports: [
@@ -15,18 +31,23 @@ import { ProductsComponent } from './products/products.component';
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
-
-    // // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
-    // // and returns simulated server responses.
-    // // Remove it when a real server is ready to receive requests.
-    // HttpClientInMemoryWebApiModule.forRoot(
-    //   InMemoryDataService, { dataEncapsulation: false }
-    // )
+    BrowserAnimationsModule,
+    MatLayoutModule,
+    MatButtonModule,
+    MatCardModule,
+    MatGridListModule,
+    MatIconModule,
+    MatListModule,
+    MatMenuModule,
+    MatSidenavModule,
+    MatToolbarModule,
   ],
   declarations: [
     AppComponent,
+    DashboardComponent,
+    NavbarComponent,
     ProductDetailComponent,
-    ProductsComponent
+    ProductsComponent,
   ],
   bootstrap: [ AppComponent ]
 })
