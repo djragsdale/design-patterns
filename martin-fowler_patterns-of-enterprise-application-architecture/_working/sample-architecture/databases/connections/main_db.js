@@ -3,15 +3,15 @@ import Sequelize from 'sequelize';
 import config from '../../config.cjs';
 
 const {
-  productDBDatabase,
-  productDBHost,
-  productDBPassword,
-  productDBUser,
+  mainDBDatabase,
+  mainDBHost,
+  mainDBPassword,
+  mainDBUser,
 } = config();
 
-const sequelize = new Sequelize(productDBDatabase, productDBUser, productDBPassword, {
-  host: productDBHost,
-  dialect: 'mysql',
+const sequelize = new Sequelize(mainDBDatabase, mainDBUser, mainDBPassword, {
+  host: mainDBHost,
+  dialect: 'postgres',
 
   pool: {
     max: 5,

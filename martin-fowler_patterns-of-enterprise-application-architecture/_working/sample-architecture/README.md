@@ -59,6 +59,14 @@ Pure functions only. Names should be descriptive of what they do in domain langu
 
 ## Setup Instructions
 
+### Install Postgres
+
+1. `brew install postgresql`
+1. `brew services start postgresql`
+1. `psql postgres`
+1. `CREATE USER dev WITH PASSWORD 'password' CREATEDB;`
+1. `CREATE DATABASE sample_db OWNER dev;`;
+
 ### Install MySQL
 
 1. `brew install mysql`
@@ -73,6 +81,11 @@ Pure functions only. Names should be descriptive of what they do in domain langu
 1. Create a new standard Sequel Pro connection to host `127.0.0.1`.
 
 Once installed, use `brew services start mysql` to start mysql and `brew services stop mysql` to stop it.
+
+### Initialize Main Database
+
+1. `npm run dev:main:migrate`
+1. `npm run dev:main:seed`
 
 ### Initialize Products Database
 

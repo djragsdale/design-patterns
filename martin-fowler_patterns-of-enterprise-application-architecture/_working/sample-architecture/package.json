@@ -4,6 +4,9 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "env-cmd node serve.js",
+    "dev:main:migrate": "env-cmd sequelize-cli db:migrate --config ./databases/main_db/config.cjs --migrations-path ./databases/main_db/migrations",
+    "dev:main:migrate-undo": "env-cmd sequelize-cli db:migrate:undo:all --config ./databases/main_db/config.cjs --migrations-path ./databases/main_db/migrations",
+    "dev:main:seed": "env-cmd sequelize-cli db:seed:all --config ./databases/main_db/config.cjs --seeders-path ./databases/main_db/seeders",
     "dev:products:migrate": "env-cmd sequelize-cli db:migrate --config ./databases/products_db/config.cjs --migrations-path ./databases/products_db/migrations",
     "dev:products:migrate-undo": "env-cmd sequelize-cli db:migrate:undo:all --config ./databases/products_db/config.cjs --migrations-path ./databases/products_db/migrations",
     "dev:products:seed": "env-cmd sequelize-cli db:seed:all --config ./databases/products_db/config.cjs --seeders-path ./databases/products_db/seeders",
@@ -16,6 +19,8 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "mysql2": "^1.7.0",
+    "pg": "^8.2.1",
+    "pg-hstore": "^2.3.3",
     "sequelize": "^5.21.9"
   },
   "devDependencies": {
