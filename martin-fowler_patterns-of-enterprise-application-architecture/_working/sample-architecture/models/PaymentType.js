@@ -4,6 +4,20 @@
 import paymentTypeModel from './PaymentType_db_model.js';
 import convertSequelizeModelToPojo from '../util/convertSequelizeModelToPojo.js';
 
+class PaymentType {
+  constructor({
+    paymentTypeId,
+    name,
+    createdAt,
+    updatedAt,
+  }) {
+    this.paymentTypeId = paymentTypeId;
+    this.name = name;
+    this.createdAt = createdAt;
+    this.updatedAt = updatedAt;
+  }
+}
+
 const getPaymentType = async (paymentTypeId) => {
   const paymentType = await paymentTypeModel.findOne({
     where: {
@@ -11,12 +25,12 @@ const getPaymentType = async (paymentTypeId) => {
     },
   }) || {};
 
-  return convertSequelizeModelToPojo(paymentType);
+  return new PaymentType(convertSequelizeModelToPojo(paymentType));
 };
 
 const getPaymentTypes = async () => {
   const paymentTypes = await paymentTypeModel.findAll();
-  return convertSequelizeModelToPojo(paymentTypes);
+  return convertSequelizeModelToPojo(paymentTypes).map((pojo) => new PaymentType(pojo));
 };
 
 export {
