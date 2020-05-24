@@ -1,10 +1,7 @@
-// shoppingCartId, userId
-
-// There are various PaymentType values
-// E.g. Credit Card, InvoiceAccount, ACH
-
 import shoppingCartModel from './ShoppingCart_db_model.js';
 import convertSequelizeModelToPojo from '../util/convertSequelizeModelToPojo.js';
+
+import { deleteShoppingCartProductsForShoppingCartId } from './ShoppingCartProduct.js';
 
 class ShoppingCart {
   constructor({
@@ -18,20 +15,32 @@ class ShoppingCart {
     this.createdAt = createdAt;
     this.updatedAt = updatedAt;
   }
+
+  async delete() {
+    const queriedShoppingCart = await shoppingCartModel.findOne({
+      where: {
+        shoppingCartId: this.shoppingCartId,
+      },
+    }) || {};
+
+    await queriedShoppingCart.destroy();
+  }
 }
 
 const deleteShoppingCartForUserId = async (userId) => {
-  const shoppingCart = await shoppingCartModel.findOne({
+  const queriedShoppingCart = await shoppingCartModel.findOne({
     where: {
       userId,
     },
   }) || {};
 
-  // TODO: Use onDelete hooks to delete shopping cart products for the shopping cart
+  const shoppingCart = new ShoppingCart(convertSequelizeModelToPojo(queriedShoppingCart));
 
-  await shoppingCart.destroy();
+  await deleteShoppingCartProductsForShoppingCartId(shoppingCart.shoppingCartId);
 
-  return new ShoppingCart(convertSequelizeModelToPojo(shoppingCart));
+  await shoppingCart.delete();
+
+  return shoppingCart;
 };
 
 const getShoppingCart = async (shoppingCartId) => {
