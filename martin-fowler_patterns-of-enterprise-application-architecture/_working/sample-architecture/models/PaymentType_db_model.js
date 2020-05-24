@@ -3,7 +3,7 @@
 
 import Sequelize from 'sequelize';
 
-import mainDb from '../databases/connections/main_db.js';
+import mainDb from '../databases/main_db/connection.js';
 
 export default mainDb.define('paymentType', {
   paymentTypeId: {

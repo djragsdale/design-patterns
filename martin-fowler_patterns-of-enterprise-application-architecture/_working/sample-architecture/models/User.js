@@ -1,6 +1,6 @@
 import constants from '../constants/index.js';
 import logger from '../util/logger/index.js';
-import users from '../databases/connections/users.js';
+import users from '../databases/users/connection.js';
 
 class User {
   constructor({

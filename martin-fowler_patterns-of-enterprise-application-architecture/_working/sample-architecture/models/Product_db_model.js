@@ -1,6 +1,6 @@
 import Sequelize from 'sequelize';
 
-import productsDb from '../databases/connections/products_db.js';
+import productsDb from '../databases/products_db/connection.js';
 
 export default productsDb.define('product', {
   productId: {
