@@ -67,6 +67,10 @@ Pure functions only. Names should be descriptive of what they do in domain langu
 1. `CREATE USER dev WITH PASSWORD 'password' CREATEDB;`
 1. `CREATE DATABASE sample_db OWNER dev;`;
 
+Once installed, use `brew services start postgresql` to start mysql and `brew services stop postgresql` to stop it.
+
+> Note: When querying tables that have camelCase names, you must use quotes, e.g. `select * from "paymentMethod";`.
+
 ### Install MySQL
 
 1. `brew install mysql`
