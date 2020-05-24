@@ -4,7 +4,7 @@
 import productDBModel from './Product_db_model.js';
 import convertSequelizeModelToPojo from '../util/convertSequelizeModelToPojo.js';
 
-class Product {
+export default class Product {
   constructor({
     productId,
     sku,
