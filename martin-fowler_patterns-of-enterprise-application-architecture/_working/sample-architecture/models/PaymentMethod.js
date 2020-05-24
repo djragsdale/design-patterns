@@ -9,7 +9,7 @@
 import paymentMethodModel from './PaymentMethod_db_model.js';
 import convertSequelizeModelToPojo from '../util/convertSequelizeModelToPojo.js';
 
-export default class PaymentMethod {
+class PaymentMethod {
   constructor({
     paymentMethodId,
     paymentTypeId,
@@ -43,4 +43,5 @@ const getPaymentMethods = async () => {
 export {
   getPaymentMethod,
   getPaymentMethods,
+  PaymentMethod,
 };

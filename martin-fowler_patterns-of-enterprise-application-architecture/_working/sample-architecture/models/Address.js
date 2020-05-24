@@ -7,7 +7,7 @@
 import addressDBModel from './Address_db_model.js';
 import convertSequelizeModelToPojo from '../util/convertSequelizeModelToPojo.js';
 
-export default class Address {
+class Address {
   constructor({
     addressId,
     isActive,
@@ -49,6 +49,7 @@ const getAddresses = async () => {
 };
 
 export {
+  Address,
   getAddress,
   getAddresses,
 };

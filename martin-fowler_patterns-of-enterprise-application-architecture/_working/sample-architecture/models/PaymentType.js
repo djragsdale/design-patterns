@@ -36,4 +36,5 @@ const getPaymentTypes = async () => {
 export {
   getPaymentType,
   getPaymentTypes,
+  PaymentType,
 };
