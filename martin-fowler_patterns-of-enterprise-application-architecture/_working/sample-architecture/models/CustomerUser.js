@@ -1,6 +1,6 @@
 // A customer can have 1 or more users
 // A user can purchase for more than 1 customer
-// This prepares us better for future integration with customer cost centers
+// This prepares us better for future integration with customer cost centers (InvoiceAccount)
 
 import customerUserModel from './CustomerUser_db_model.js';
 import convertSequelizeModelToPojo from '../util/convertSequelizeModelToPojo.js';

@@ -43,11 +43,11 @@ Only constant values. Helpful for enums that don't need to reside in the databas
 
 ### Databases
 
-Each database contains 4 things: migrations, seeds/seeders, config, and a connection. Migrations should always be reversible, however, we rely on the tooling for that database type to do it. Depending on the tooling, you might need additional things or fewer things. 
+Each database contains 4 things: migrations, seeds/seeders, config, and a connection. Migrations should always be reversible, however, we rely on the tooling for that database type to do it. Depending on the tooling, you might need additional things or fewer things.
 
 ### Models
 
-True Domain Models. Using separate models for our DB Models/Data Mappers adds a layer but allows the rest of our code to interact with the data source with zero knowledge of the data source. If the data source is a web service or API (like Firebase), we can implement those methods ourselves as needed. Keeping DB Models separate from the Domain Model allows our seed scripts to use our DB Models.
+True Domain Models. Using separate models for our DB Models/Data Mappers adds a layer but allows the rest of our code to interact with the data source with zero knowledge of the data source. If the data source is a web service or API (like Firebase), we can implement those methods ourselves as needed. Keeping DB Models separate from the Domain Model allows our seed scripts to use our DB Models. Default values should be implemented in the Domain Model instead of the DB Model.
 
 ### Routes
 
