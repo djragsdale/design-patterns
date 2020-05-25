@@ -20,6 +20,8 @@ class Customer {
 
   // .addUser(User) method upserts a related CustomerUser
 
+  // .getBalance to get outstanding invoices
+
   // .save() method uses an upsert
 }
 
