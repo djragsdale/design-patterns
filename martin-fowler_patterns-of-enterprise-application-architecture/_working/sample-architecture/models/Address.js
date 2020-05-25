@@ -4,6 +4,8 @@
 // may be distributed, with things like Customer addresses in fast storage while shipping addresses
 // over 1 year old go into slow storage.
 
+// Addresses should never be updated, just marked inactive. This preserves our past data integrity.
+
 import addressDBModel from './Address_db_model.js';
 import convertSequelizeModelToPojo from '../util/convertSequelizeModelToPojo.js';
 

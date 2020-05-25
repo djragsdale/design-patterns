@@ -17,6 +17,10 @@ class Customer {
     this.createdAt = createdAt;
     this.updatedAt = updatedAt;
   }
+
+  // .addUser(User) method upserts a related CustomerUser
+
+  // .save() method uses an upsert
 }
 
 const getCustomers = async () => {
