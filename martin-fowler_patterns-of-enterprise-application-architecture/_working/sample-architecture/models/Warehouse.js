@@ -11,12 +11,14 @@ class Warehouse {
     warehouseId,
     name,
     description,
+    addressId,
     createdAt,
     updatedAt,
   }) {
     this.warehouseId = warehouseId;
     this.name = name;
     this.description = description;
+    this.addressId = addressId;
     this.createdAt = createdAt;
     this.updatedAt = updatedAt;
   }

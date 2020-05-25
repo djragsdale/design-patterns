@@ -16,6 +16,14 @@ export default mainDb.define('warehouse', {
   },
   name: Sequelize.STRING(100),
   description: Sequelize.STRING(255),
+  addressId: {
+    allowNull: false,
+    type: Sequelize.INTEGER,
+    references: {
+      model: 'address',
+      key: 'addressId',
+    },
+  },
   createdAt: {
     allowNull: false,
     type: Sequelize.DATE,
