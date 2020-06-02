@@ -7,8 +7,10 @@
   "author": "",
   "license": "MIT",
   "repository": {},
+  "type": "module",
   "main": "lib/index.js",
   "scripts": {
+    "dataview": "node ./lib/index.js dataview",
     "start": "node ./lib/index.js"
   },
   "dependencies": {
