@@ -1,5 +1,7 @@
 'use strict';
 
+// Related patterns: Strategy objects often make good flyweights.
+
 function Composition () {
 
   let _compositor;
