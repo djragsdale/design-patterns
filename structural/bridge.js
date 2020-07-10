@@ -7,13 +7,13 @@
 // An Abstract Factory can create and configure a particular Bridge.
 // The Adapter pattern is geared toward making unrelated classes work together. It is usually
 // applied to systems after they're designed. Bridge, on the other hand, is used up-front in a
-// design to let abstractions and implementations vary independently.
+// design to let abstractions and implementations vary independently.'/
 
 const numberToCoord = require('../foundation/Coord');
 const Point = require('../foundation/Point');
 
 // Stubbing for valid code.
-function WindowSystemFactory() {
+function WindowSystemFactory () {
   this.Instance = function () {
     return {
       MakeWindowImp: function () {
@@ -25,12 +25,12 @@ function WindowSystemFactory() {
 
 function Window () {
 
+  let _imp; // WindowImp
+  let _contents; // View
+
   function constructor(contents) {
 
   }
-
-  let _imp; // WindowImp
-  let _contents; // View
 
   this.DrawContents = function () {
 
