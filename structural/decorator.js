@@ -4,6 +4,16 @@
 // Attach additional responsibilities to an object dynamically. Decorators provide a flexible
 // alternative to subclassing for extending functionality.
 
+// Related Patterns:
+// Adapter: A decorator is different from an adapter in that a decorator only changes an object's
+// responsibilities, not its interface; an adapter will give an object a completely new interface.
+//
+// Composite: A decorator can be viewed as a degenerate composite with only one component. However,
+// a decorator adds additional responsibilties-it isn't intended for object aggregation.
+//
+// Strategy: A decorator lets you change the skin of an object; a strategy lets you change the
+// guts. These are two alternative ways of changing an object.
+
 function VisualComponent () {
 
   function constructor () {
