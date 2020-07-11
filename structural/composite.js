@@ -6,11 +6,15 @@
 
 // Related Patterns:
 // Often the component-parent link is used for a Chain of Responsibility.
+//
 // Decorator is often used with Composite. When decorators and composites are used together, they
 // will usually have a common parent class. So decorators will have to support the Component
 // interface with operations like Add, Remove, and GetChild.
+//
 // Flyweight lets you share components, but they can no longer refer to their parents.
+//
 // Iterator can be used to traverse composites.
+//
 // Visitor localizes operations and behavior that would otherwise be distributed across Composite
 // and Leaf classes.
 
