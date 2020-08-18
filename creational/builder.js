@@ -1,5 +1,9 @@
 'use strict';
 
+// Intent:
+// Separate the construction of a complex object from its representation so that the same
+// construction process can create different representations.
+
 const MazeLibrary = {};
 const Maze = function () {
 	let _rooms;

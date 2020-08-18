@@ -1,5 +1,12 @@
 'use strict';
-// Seriously? This is how ALL of javascript object inheritance works internally, so you're reproducing default functionality. But if you insist...
+
+// Note from djragsdale:
+// Seriously? This is how ALL of javascript object inheritance works internally, so you're
+// reproducing default functionality. But if you insist...
+
+// Intent:
+// Specify the kinds of objects to create using a prototypical instance, and create new objects by
+// copying this prototype.
 
 let MazeLibrary = {};
 

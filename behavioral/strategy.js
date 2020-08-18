@@ -1,5 +1,9 @@
 'use strict';
 
+// Intent:
+// Define a family of algorithms, encapsulate each one, and make them interchangeable. Strategy
+// lets the algorithm vary independently from clients that use it.
+
 // Related patterns: Strategy objects often make good flyweights.
 
 function Composition () {
